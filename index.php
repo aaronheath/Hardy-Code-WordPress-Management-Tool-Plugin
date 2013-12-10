@@ -1,0 +1,69 @@
+<?php
+/**
+ * Plugin Name: WordPress Management Tool
+ * Plugin URI: https://hardycode.com.au/wordpress
+ * Description: A plugin for WorkPress that hooks in to Hardy Code's WordPress Management Tool service. The service WordPress Management Tool service enables administrators the ability to monitor all their WordPress installs from one convient place. For more information checkout hardycode.com.au/wordpress.
+ * Version: 0.0.3
+ * Author: Aaron Heath
+ * Author URI: http://aaronheath.com/
+ * License: Creative Commons Attribution-ShareAlike 4.0 International License
+ * License URI: http://creativecommons.org/licenses/by-sa/4.0/
+ */
+
+/**
+ * Constants
+ */
+
+define('WP_USE_THEMES', false);
+define('API_URL', "https://hc/tools/wpmt/api");
+define('OPTION_KEY', "HC_WPMT_KEY");
+define('OPTION_STATUS', "HC_WPMT_STATUS");
+define('OPTION_REMOTE_STATUS', "HC_WPMT_REMOTE_STATUS");
+
+define("PAGE_TITLE", "WordPress Management Tool by Hardy Code");
+define("PAGE_MENU_TITLE", "WPMT");
+define("PAGE_CAPABILITY", "manage_options");
+define("PAGE_MENU_SLUG", "wordpress-management-tool");
+
+define('CURL_SSL_CHECKS', false);   // This should be set to true when in a production environment
+
+/**
+ * Absolute path of the WordPress install
+ */
+
+$basePath = (defined('ABSPATH')) ? ABSPATH : realpath("../../../");
+
+global $wp, $wp_query, $wp_the_query, $wp_rewrite, $wp_did_header;
+
+/**
+ * WordPress Core Dependancies
+ */
+
+require_once($basePath . '/wp-load.php');
+require_once($basePath . '/wp-admin/includes/plugin-install.php');
+require_once($basePath . '/wp-admin/includes/plugin.php');
+require_once($basePath . '/wp-admin/includes/update.php');
+
+/**
+ * WPMT Classes
+ */
+
+include('classes/key.php');
+include('classes/info.php');
+include('classes/api.php');
+include('classes/plugin.php');
+include('classes/page.php');
+include('classes/repo.php');
+
+/**
+ * Activation / Deactivation Hooks
+ */
+
+register_activation_hook(__FILE__, array("Plugin", "activate"));
+register_deactivation_hook(__FILE__, array("Plugin", "disable"));
+
+/**
+ * Plugin admin area page hook
+ */
+
+add_action('admin_menu', array("Page", "menu"));
