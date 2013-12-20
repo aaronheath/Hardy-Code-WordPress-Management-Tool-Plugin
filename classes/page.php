@@ -32,7 +32,7 @@ class Page {
     public static function render() {
         
         self::GETquery();        
-        include(ABSPATH."wp-content/plugins/wpmt/templates/page.php");
+        include(PLUGIN_ABS."templates/page.php");
         
     }
     
@@ -65,7 +65,7 @@ class Page {
             
             switch($_GET["push_update"]) { // Allow for more in the future
                 case "now":
-                    API::pushUpdate();
+                    API::push_update();
                     break;
             }
             
