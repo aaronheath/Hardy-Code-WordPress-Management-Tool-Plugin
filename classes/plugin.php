@@ -59,4 +59,31 @@ class Plugin {
 
     }
     
+    /**
+     * Checks if a certain dependancy is avaialble
+     *    
+     * @param   string  $name
+     * @return  bool
+     */
+    
+    public static function dependancy($name = false, $human = false) {
+        
+        $return = false;
+        
+        switch($name) {
+            case false:
+                break;
+            case "curl":
+                $return = function_exists('curl_version');
+                break;
+        }
+        
+        if($human) {
+            $return = ($return) ? "Supported" : "Not Supported";
+        }
+        
+        return $return;
+
+    }
+    
 }

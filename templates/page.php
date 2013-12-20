@@ -42,6 +42,11 @@
             <th>API Key</th>
             <td><?php echo Key::get(); ?></td>
         </tr>
+        
+        <tr>
+            <th>CURL Support</th>
+            <td><?php echo  Plugin::dependancy("curl", true); ?></td>
+        </tr>
     
     </table>
     
