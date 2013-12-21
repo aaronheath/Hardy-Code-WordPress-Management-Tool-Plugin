@@ -19,9 +19,9 @@ class Plugin {
      * @return bool
      */
     
-    public static function status($plugin = "wpmt/index.php") {
+    public static function status($plugin = PLUGIN_ABS) {
         
-        $return    = is_plugin_active($plugin);
+        $return    = is_plugin_active(PLUGIN_BASENAME);
         return $return;
         
     }
