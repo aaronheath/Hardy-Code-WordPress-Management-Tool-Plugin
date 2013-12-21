@@ -41,6 +41,7 @@ class Plugin {
             
         }
         
+        API::pluginURL();
         API::start();
         API::push_update();
         API::remote_status();

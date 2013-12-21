@@ -140,4 +140,17 @@ class Info {
         
     }
     
+    /**
+     * Returns this installs API URL.
+     *    
+     * @return string
+     */
+    
+    public static function apiURL() {
+        
+        $return = get_option(OPTION_URL);
+        return $return;
+        
+    }
+    
 }

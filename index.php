@@ -11,24 +11,6 @@
  */
 
 /**
- * Constants
- */
-
-define('WP_USE_THEMES', false);
-define('API_URL', "https://hardycode.com.au/tools/wpmt/api");
-define('OPTION_KEY', "HC_WPMT_KEY");
-define('OPTION_STATUS', "HC_WPMT_STATUS");
-define('OPTION_REMOTE_STATUS', "HC_WPMT_REMOTE_STATUS");
-
-define("PAGE_TITLE", "WordPress Management Tool by Hardy Code");
-define("PAGE_MENU_TITLE", "WPMT");
-define("PAGE_CAPABILITY", "manage_options");
-define("PAGE_MENU_SLUG", "wordpress-management-tool");
-define("PLUGIN_ABS", plugin_dir_path( __FILE__ ));
-
-define('CURL_SSL_CHECKS', false);   // This should be set to true when in a production environment
-
-/**
  * Absolute path of the WordPress install
  */
 
@@ -44,6 +26,26 @@ require_once($basePath . '/wp-load.php');
 require_once($basePath . '/wp-admin/includes/plugin-install.php');
 require_once($basePath . '/wp-admin/includes/plugin.php');
 require_once($basePath . '/wp-admin/includes/update.php');
+
+/**
+ * Constants
+ */
+
+define('WP_USE_THEMES', false);
+define('API_URL', "https://hardycode.com.au/tools/wpmt/api"); // Production: hardycode.com.au, Dev: hc
+define('OPTION_KEY', "HC_WPMT_KEY");
+define('OPTION_STATUS', "HC_WPMT_STATUS");
+define('OPTION_REMOTE_STATUS', "HC_WPMT_REMOTE_STATUS");
+define('OPTION_URL', "HC_WPMT_PLUGIN_URL");
+
+define("PAGE_TITLE", "WordPress Management Tool by Hardy Code");
+define("PAGE_MENU_TITLE", "WPMT");
+define("PAGE_CAPABILITY", "manage_options");
+define("PAGE_MENU_SLUG", "wordpress-management-tool");
+define("PLUGIN_ABS", plugin_dir_path( __FILE__ ));
+define("PLUGIN_URL", plugin_dir_url( __FILE__ ));
+
+define('CURL_SSL_CHECKS', false);   // This should be set to true when in a production environment
 
 /**
  * WPMT Classes

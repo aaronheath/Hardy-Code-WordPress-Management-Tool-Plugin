@@ -97,6 +97,7 @@ class API {
         $pluginsUpdates     = Info::pluginUpdates();
         $diskTotal          = Info::disk("total");
         $diskFree           = Info::disk("free");
+        $apiURL             = Info::apiURL();
         
         $JSONArray = array(
             "call"                      => "push_update",
@@ -302,6 +303,22 @@ class API {
         
         $id = md5( NONCE_SALT.time() );
         return $id;
+        
+    }
+    
+    /**
+     * Register Plugin URL Option.
+     *    
+     * @return bool
+     */
+    
+    public static function pluginURL() {
+        
+        if(!update_option(OPTION_URL, PLUGIN_URL."api.php")) {
+            return false;
+        }
+        
+        return true;
         
     }
     
