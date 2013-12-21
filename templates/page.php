@@ -47,6 +47,11 @@
             <th>CURL Support</th>
             <td><?php echo  Plugin::dependancy("curl", true); ?></td>
         </tr>
+        
+        <tr>
+            <th>API URL</th>
+            <td><?php echo  Info::apiURL(); ?></td>
+        </tr>
     
     </table>
     

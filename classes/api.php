@@ -114,6 +114,7 @@ class API {
             "plugin_updates"            => $pluginsUpdates,
             "total_disk_space"          => $diskTotal,
             "free_disk_space"           => $diskFree,
+            "api_url"                   => $apiURL,
         );
         
         return $JSONArray;
