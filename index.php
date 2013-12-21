@@ -52,12 +52,12 @@ define('CURL_SSL_CHECKS', false);   // This should be set to true when in a prod
  * WPMT Classes
  */
 
-include('classes/key.php');
-include('classes/info.php');
-include('classes/api.php');
-include('classes/plugin.php');
-include('classes/page.php');
-include('classes/repo.php');
+require_once('classes/key.php');
+require_once('classes/info.php');
+require_once('classes/api.php');
+require_once('classes/plugin.php');
+require_once('classes/page.php');
+require_once('classes/repo.php');
 
 /**
  * Activation / Deactivation Hooks
