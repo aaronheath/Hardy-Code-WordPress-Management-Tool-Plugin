@@ -44,7 +44,11 @@ define("PAGE_CAPABILITY", "manage_options");
 define("PAGE_MENU_SLUG", "wordpress-management-tool");
 define("PLUGIN_ABS", plugin_dir_path( __FILE__ ));
 define("PLUGIN_URL", plugin_dir_url( __FILE__ ));
-define("PLUGIN_BASENAME", plugin_basename(__FILE__));
+
+
+$basename   = explode("/", __DIR__);
+$basename   = end($basename);
+define("PLUGIN_BASENAME", $basename."/index.php");
 
 define('CURL_SSL_CHECKS', false);   // This should be set to true when in a production environment
 
