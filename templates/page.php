@@ -4,6 +4,10 @@
 	
     <h2><?php echo PAGE_TITLE; ?></h2>
     
+    <p>The <a href="https://hardycode.com.au/tools/wp-management-tool" target="_blank">WordPress Management Tool (WPMT) by Hardy Code</a> is designed to assist those that are responsible for multiple installations of WordPress around the net.</p>
+			        
+    <p>All an administrator has to do is install the WPMT plugin, sign up for the <a href="https://hardycode.com.au/tools" target="_blank">Hardy Code Tools</a> and register the generated Site Key.</p>
+    
     <table class="form-table">
         
         <tr>
@@ -39,7 +43,7 @@
         </tr>
         
         <tr>
-            <th>API Key</th>
+            <th>Site Key</th>
             <td><?php echo Key::get(); ?></td>
         </tr>
         
@@ -54,5 +58,9 @@
         </tr>
     
     </table>
+    
+    <p>Want to see the code for yourself? Check it out over at <a href="https://github.com/aaronheath/WPMTPlugin" target="_blank">GitHub</a>.</p>
+    
+    <p>You're currently running version <?php echo PLUGIN_VERSION ?> of the plugin.</p>
     
 </div>
