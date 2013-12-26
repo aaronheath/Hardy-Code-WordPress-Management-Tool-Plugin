@@ -1,84 +1,67 @@
-=== Plugin Name ===
+=== WordPress Management Tool by Hardy Code ===
 Contributors: bomberaza
 Tags: management, updates, monitor, remote, portal
 Requires at least: 3.0.1
 Tested up to: 3.8
 Stable tag: trunk
-License: Creative Commons Attribution-ShareAlike 4.0 International License
-http://creativecommons.org/licenses/by-sa/4.0/
+License: GNU General Public License, version 2
+License URI: http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
 
-The WordPress Management Tool from Hardy Code helps administrators with multiple WordPress installs monitor each build from a single portal.
+The WordPress Management Tool by Hardy Code helps administrators with multiple WordPress installs monitor each build from a single portal.
 
 == Description ==
 
-Extended description. Dupleicate fromw website.
+The WordPress Management Tool (WPMT) by Hardy Code is designed to assist those that are responsible for multiple installations of WordPress around the net.
+			        
+All an administrator has to do is install the WPMT plugin, sign up for the Hardy Code Tools and register the generated Site Key.
+
+It's as simple as can be!
+
+= How much does this cost? =
+
+Short Answer: Free (for now)!
+
+Long Answer: Whilst we all like to make some money, this product is still, in our minds, in beta. At this stage we feel the service should prove itself before we charge for it. This doesn't mean that we will charge for it once it's a proven service, it just means that we might.
+
+= How do we capture information about a site? =
+
+First of all let's get it out there that we wouldn't have build this service unless we were able to make it secure.
+
+Here is how the plugin transmits site information to the Hardy Code servers:
+
+* Upon plugin installation and activation, the plugin will transmit one set of information about the site to the Hardy Code servers.
+* Once a site is registered with the Hardy Code servers, the server will periodically poll the plugin for site information. If multiple Hardy Code users have the site registered as a part of their profile, all users must deactivate their registration for the polling to cease.
+* The plugin will only respond to polling requests if it's activate. Want to stop it from sending information? De-activate the plugin.
+
+= Exactly what information does the plugin send? =
+
+The plugin sends the following information to the Hardy Code servers:
+
+* Site Name
+* Site URL
+* WordPress Build
+* List of installed plugins
+* List of installed plugins versions
+* List of installed plugins summary information
+* Name of the current theme
+* Version of the current theme
+* The servers IP Address
+* Total disk space
+* Used Disk space
+
+All this information is transmitted to the Hardy Code servers using a secure SSL connection.
 
 == Installation ==
 
-Install instructions. Duplicate and link back to website. Link to other guides as well.
-
-== Frequently Asked Questions ==
-
-= A question that someone might have =
-
-An answer to that question.
-
-= What about foo bar? =
-
-Answer to foo bar dilemma.
-
-== Screenshots ==
-
-1. This screen shot description corresponds to screenshot-1.(png|jpg|jpeg|gif). Note that the screenshot is taken from
-the /assets directory or the directory that contains the stable readme.txt (tags or trunk). Screenshots in the /assets 
-directory take precedence. For example, `/assets/screenshot-1.png` would win over `/tags/4.3/screenshot-1.png` 
-(or jpg, jpeg, gif).
-2. This is the second screen shot
+* [Download](https://github.com/aaronheath/WPMTPlugin/archive/master.zip) the plugin.
+* Upload the plugin to the /wp-content/plugins/ directory.
+* Activate the plugin through the Plugins menu in WordPress.
 
 == Changelog ==
 
-= 1.0 =
-* A change since the previous version.
-* Another change.
+= v0.0.4 =
+* Initial Release
 
-= 0.5 =
-* List versions from most recent at top to oldest at bottom.
+== Feedback or Issues ==
 
-== Upgrade Notice ==
-
-= 1.0 =
-Upgrade notices describe the reason a user should upgrade.  No more than 300 characters.
-
-= 0.5 =
-This version fixes a security related bug.  Upgrade immediately.
-
-== Arbitrary section ==
-
-You may provide arbitrary sections, in the same format as the ones above.  This may be of use for extremely complicated
-plugins where more information needs to be conveyed that doesn't fit into the categories of "description" or
-"installation."  Arbitrary sections will be shown below the built-in sections outlined above.
-
-== A brief Markdown Example ==
-
-Ordered list:
-
-1. Some feature
-1. Another feature
-1. Something else about the plugin
-
-Unordered list:
-
-* something
-* something else
-* third thing
-
-Here's a link to [WordPress](http://wordpress.org/ "Your favorite software") and one to [Markdown's Syntax Documentation][markdown syntax].
-Titles are optional, naturally.
-
-[markdown syntax]: http://daringfireball.net/projects/markdown/syntax
-            "Markdown is what the parser uses to process much of the readme file"
-
-Markdown uses email style notation for blockquotes and I've been told:
-> Asterisks for *emphasis*. Double it up  for **strong**.
-
-`<?php code(); // goes in backticks ?>`
+Please feel free to lodge issues using the [GitHub](https://github.com/aaronheath/WPMTPlugin/issues) issues interface. Should you wish to provide direct feedback please email me at [aaron@hardycode.com.au](mailto:aaron@hardycode.com.au).

@@ -1,35 +1,55 @@
 # WordPress Management Tool Plugin
 
-## Important 
+The WordPress Management Tool (WPMT) by Hardy Code is designed to assist those that are responsible for multiple installations of WordPress around the net.
+			        
+All an administrator has to do is install the WPMT plugin, sign up for the Hardy Code Tools and register the generated Site Key.
 
-The plugin is contiues to be in an early development phase and is not currently supported by the public build of [hardycode.com.au](https://hardycode.com.au/). I do not recommend installing this plugin until such time that the Hardy Code website API supports the plugin and the plugin itself is avaialble via the [WordPress Plugin Directory](http://wordpress.org/plugins/).
+It's as simple as can be!
 
-## Introduction
+## How much does this cost?
 
-A plugin for [WorkPress](http://wordpress.org) that hooks in to [Hardy Code's WordPress Management Tool](https://hardycode.com.au/tools) service. The service WordPress Management Tool service enables administrators the ability to monitor all their WordPress installs from one convient place. For more information checkout [hardycode.com.au/wordpress](https://hardycode.com.au/wordpress).
+Short Answer: Free (for now)!
 
-## Status
+Long Answer: Whilst we all like to make some money, this product is still, in our minds, in beta. At this stage we feel the service should prove itself before we charge for it. This doesn't mean that we will charge for it once it's a proven service, it just means that we might.
 
-In pre-release development
+## How do we capture information about a site?
 
-## Current Release
+First of all let's get it out there that we wouldn't have build this service unless we were able to make it secure.
 
-v0.0.3 (not for public installation)
+Here is how the plugin transmits site information to the Hardy Code servers:
 
-## How To Install
+* Upon plugin installation and activation, the plugin will transmit one set of information about the site to the Hardy Code servers.
+* Once a site is registered with the Hardy Code servers, the server will periodically poll the plugin for site information. If multiple Hardy Code users have the site registered as a part of their profile, all users must deactivate their registration for the polling to cease.
+* The plugin will only respond to polling requests if it's activate. Want to stop it from sending information? De-activate the plugin.
 
-Installing the plugin is pretty easy, simply: 
+## Exactly what information does the plugin send?
 
-1. Download the .zip from GitHub
+The plugin sends the following information to the Hardy Code servers:
 
-1. Export to your WordPress Plugin directory.
+* Site Name
+* Site URL
+* WordPress Build
+* List of installed plugins
+* List of installed plugins versions
+* List of installed plugins summary information
+* Name of the current theme
+* Version of the current theme
+* The servers IP Address
+* Total disk space
+* Used Disk space
 
-1. Activate the plugin via the WordPress Admin interface.
+All this information is transmitted to the Hardy Code servers using a secure SSL connection.
 
-## Licence
+## Installation
 
-Creative Commons Attribution-ShareAlike 4.0 International License
-[More information](http://creativecommons.org/licenses/by-sa/4.0/)
+* [Download](https://github.com/aaronheath/WPMTPlugin/archive/master.zip) the plugin.
+* Upload the plugin to the /wp-content/plugins/ directory.
+* Activate the plugin through the Plugins menu in WordPress.
+
+## Changelog
+
+* v0.0.4
+ * Initial Release
 
 ## Feedback or Issues
 

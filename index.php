@@ -6,8 +6,8 @@
  * Version: 0.0.4
  * Author: Aaron Heath
  * Author URI: http://aaronheath.com/
- * License: Creative Commons Attribution-ShareAlike 4.0 International License
- * License URI: http://creativecommons.org/licenses/by-sa/4.0/
+ * License: GNU General Public License, version 2
+ * License URI: http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
  */
 
 /**

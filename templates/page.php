@@ -4,7 +4,7 @@
 	
     <h2><?php echo PAGE_TITLE; ?></h2>
     
-    <p>The <a href="https://hardycode.com.au/tools/wp-management-tool" target="_blank">WordPress Management Tool (WPMT) by Hardy Code</a> is designed to assist those that are responsible for multiple installations of WordPress around the net.</p>
+    <p>The <a href="https://hardycode.com.au/tools/wordpress-management-tool" target="_blank">WordPress Management Tool (WPMT) by Hardy Code</a> is designed to assist those that are responsible for multiple installations of WordPress around the net.</p>
 			        
     <p>All an administrator has to do is install the WPMT plugin, sign up for the <a href="https://hardycode.com.au/tools" target="_blank">Hardy Code Tools</a> and register the generated Site Key.</p>
     
@@ -17,7 +17,7 @@
                 <i>This reflects whether the plugin will respond to a call from the Hardy Code servers to provide updated site records.</i>
             </td>
         </tr>
-        
+        <!--  
         <tr>
             <th>Remote Reporting Status</th>
             <td>
@@ -36,7 +36,7 @@
                 <i>This setting, can also be adjusted via your WMPT Console over at <a href="https://hardycode.com.au/wpmt" target="_blank">hardycode.com.au/wpmt</a>.</i>
             </td>
         </tr>
-        
+        -->
         <tr>
             <th>Push Update</th>
             <td><a href="<?php echo "?page=".PAGE_MENU_SLUG."&push_update=now" ?>">Now!</a></td>
@@ -49,7 +49,10 @@
         
         <tr>
             <th>CURL Support</th>
-            <td><?php echo  Plugin::dependancy("curl", true); ?></td>
+            <td>
+                <?php echo  Plugin::dependancy("curl", true); ?><br>
+                CURL must be supported in order for the plugin to communicate with Hardy Code's servers.
+            </td>
         </tr>
         
         <tr>
