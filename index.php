@@ -54,6 +54,7 @@ require_once('classes/api.php');
 require_once('classes/plugin.php');
 require_once('classes/page.php');
 require_once('classes/repo.php');
+require_once('classes/xmlrpc.php');
 
 /**
  * Activation / Deactivation Hooks
@@ -73,3 +74,8 @@ add_action('admin_menu', array("Page", "menu"));
  */
 
 add_action('init', array('API', 'listen'), 0);
+
+
+
+
+add_filter("xmlrpc_methods", array("WPMT_xmlrpc", "wpmt_methods"));

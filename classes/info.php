@@ -115,7 +115,7 @@ class Info {
         
     }
     
-    function get_plugin_updates() {
+    public static function get_plugin_updates() {
     	$all_plugins = get_plugins();
     	$upgrade_plugins = array();
     	$current = get_site_transient( 'update_plugins' );
@@ -269,7 +269,7 @@ class Info {
      * @return array
      */
     
-    function get_plugin_data( $plugin_file, $markup = true, $translate = true ) {
+    public static function get_plugin_data( $plugin_file, $markup = true, $translate = true ) {
 
     	$default_headers = array(
     		'Name' => 'Plugin Name',
@@ -312,7 +312,7 @@ class Info {
      * @return int
      */
     
-    function _sort_uname_callback( $a, $b ) {
+    public static function _sort_uname_callback( $a, $b ) {
     	return strnatcasecmp( $a['Name'], $b['Name'] );
     }
     

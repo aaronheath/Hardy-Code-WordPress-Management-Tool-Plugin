@@ -45,6 +45,7 @@ class Plugin {
         API::start();
         API::push_update();
         API::remote_status();
+        self::rewriteRules();
         
     }
     
@@ -85,6 +86,17 @@ class Plugin {
         
         return $return;
 
+    }
+    
+    public static function rewriteRules() {
+        
+        flush_rewrite_rules();
+        
+        $rules      = "/api/wpmt(?:\?.*)$";
+        $rewrite    = "/index.php";
+        $position   = "bottom";
+        add_rewrite_rule($rule, $rewrite, $position);
+        
     }
     
 }

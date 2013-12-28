@@ -131,7 +131,7 @@ class API {
         
         $infoArray      = self::info();
         $JSONencoded    = Repo::JSONEncode($infoArray);
-        self::call($JSONencoded);
+        return self::call($JSONencoded);
         
     }
     
