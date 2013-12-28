@@ -165,8 +165,8 @@ class Info {
     
     public static function apiURL() {
         
-        $return = get_option(OPTION_URL);
-        return $return;
+        //$return = get_option(OPTION_URL);
+        return PLUGIN_URL;
         
     }
     
