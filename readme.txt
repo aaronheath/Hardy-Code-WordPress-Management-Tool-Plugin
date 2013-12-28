@@ -1,7 +1,7 @@
 === WordPress Management Tool by Hardy Code ===
 Contributors: bomberaza
 Tags: management, updates, monitor, remote, portal
-Requires at least: 3.0.1
+Requires at least: 3.4
 Tested up to: 3.8
 Stable tag: trunk
 License: GNU General Public License, version 2
