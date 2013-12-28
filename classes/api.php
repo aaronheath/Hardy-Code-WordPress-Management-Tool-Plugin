@@ -10,46 +10,7 @@
 */
 
 class API {
-    
-    /**
-     * Assess a call to this sites WPMT API location and determines its validity.
-     * If valid then the function will invoke the neccessary function(s) to perform
-     * the requested task.
-     *    
-     * @return null
-     */
-    
-    public static function listen() {
-        
-        $requests = array("push_update", "stop", "start", "remote_status_notification");
-        
-        if( !isset($_POST["call"]) && !in_array($_POST["call"], $requests) && !preg_match("|/api/wpmt(?:\?.*)$|", $_SERVER["REQUEST_URI"]) ) {
-            return false;
-        }
-        
-        $call = $_POST["call"];
-        
-        switch($call) {
-            case "push_update":
-                self::push_update();
-                break;
-            case "start":
-                self::start();
-                break;
-            case "stop":
-                self::stop();
-                break;
-            case "remote_status_notification":
-                self::remote_status_notification();
-                break;
-            default:
-                //echo "<pre>";
-                //print_r(self::info());
-                //echo "</pre>";
-        }
-        
-    }
-    
+
     /**
      * Performs HTTP POST call to Hardy Code's API.
      * Data must be in JSON encoded.
@@ -62,8 +23,8 @@ class API {
         
         $ch = curl_init(API_URL);                                                                      
         curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "POST"); 
-        curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, CURL_SSL_CHECKS );
-        curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, CURL_SSL_CHECKS );                                                                 
+        curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, self::curl_ssl_options("verifypeer") );
+        curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, self::curl_ssl_options("verifyhost") );                                                                 
         curl_setopt($ch, CURLOPT_POSTFIELDS, $data);                                                                  
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);                                                                      
         curl_setopt($ch, CURLOPT_HTTPHEADER, array(                                                                          
@@ -74,6 +35,30 @@ class API {
         $result = curl_exec($ch);
         
         return $result;
+        
+    }
+    
+    /**
+     * Depending on CURL_SSL_CHECKS, provides relevant curl ssl options.
+     *    
+     * @param   bool    @setting
+     * @return  bool int
+     */
+    
+    public static function curl_ssl_options($setting) {
+        
+        switch($setting) {
+            case "verifypeer":
+                $return     = (CURL_SSL_CHECKS) ? true : false;
+                break;
+            case "verifyhost":
+                $return     = (CURL_SSL_CHECKS) ? 2 : 0;
+                break;
+            default:
+                $return     = 0;
+        }
+        
+        return $return;
         
     }
     

@@ -56,6 +56,13 @@
         </tr>
         
         <tr>
+            <th>XML-RPC Support</th>
+            <td>
+                <?php echo  Plugin::dependancy("xmlrpc", true); ?>
+            </td>
+        </tr>
+        
+        <tr>
             <th>API URL</th>
             <td><?php echo  Info::apiURL(); ?></td>
         </tr>
