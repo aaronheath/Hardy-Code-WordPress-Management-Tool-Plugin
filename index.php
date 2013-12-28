@@ -35,7 +35,7 @@ define("PAGE_MENU_TITLE", "WPMT");
 define("PAGE_CAPABILITY", "manage_options");
 define("PAGE_MENU_SLUG", "wordpress-management-tool");
 define("PLUGIN_ABS", plugin_dir_path( __FILE__ ));
-define("PLUGIN_URL", home_url( ).'/api/wpmt');
+define("PLUGIN_URL", home_url( ).'/xmlrpc.php');
 
 
 $basename   = explode("/", __DIR__);
