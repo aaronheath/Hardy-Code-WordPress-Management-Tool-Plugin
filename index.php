@@ -19,15 +19,6 @@ $basePath = (defined('ABSPATH')) ? ABSPATH : realpath("../../../");
 global $wp, $wp_query, $wp_the_query, $wp_rewrite, $wp_did_header;
 
 /**
- * WordPress Core Dependancies
- */
-
-require_once($basePath . '/wp-load.php');
-require_once($basePath . '/wp-admin/includes/plugin-install.php');
-require_once($basePath . '/wp-admin/includes/plugin.php');
-require_once($basePath . '/wp-admin/includes/update.php');
-
-/**
  * Constants
  */
 
@@ -44,7 +35,7 @@ define("PAGE_MENU_TITLE", "WPMT");
 define("PAGE_CAPABILITY", "manage_options");
 define("PAGE_MENU_SLUG", "wordpress-management-tool");
 define("PLUGIN_ABS", plugin_dir_path( __FILE__ ));
-define("PLUGIN_URL", plugin_dir_url( __FILE__ ));
+define("PLUGIN_URL", home_url( ).'/api/wpmt');
 
 
 $basename   = explode("/", __DIR__);
@@ -76,3 +67,9 @@ register_deactivation_hook(__FILE__, array("Plugin", "disable"));
  */
 
 add_action('admin_menu', array("Page", "menu"));
+
+/**
+ * Listening for API POST vars
+ */
+
+add_action('init', array('API', 'listen'), 0);

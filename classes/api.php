@@ -23,7 +23,7 @@ class API {
         
         $requests = array("push_update", "stop", "start", "remote_status_notification");
         
-        if( !isset($_POST["call"]) && !in_array($_POST["call"], $requests) ) {
+        if( !isset($_POST["call"]) && !in_array($_POST["call"], $requests) && !preg_match("|/api/wpmt(?:\?.*)$|", $_SERVER["REQUEST_URI"]) ) {
             return false;
         }
         
@@ -43,9 +43,9 @@ class API {
                 self::remote_status_notification();
                 break;
             default:
-                echo "<pre>";
-                print_r(self::info());
-                echo "</pre>";
+                //echo "<pre>";
+                //print_r(self::info());
+                //echo "</pre>";
         }
         
     }
@@ -315,7 +315,7 @@ class API {
     
     public static function pluginURL() {
         
-        if(!update_option(OPTION_URL, PLUGIN_URL."api.php")) {
+        if(!update_option(OPTION_URL, PLUGIN_URL)) {
             return false;
         }
         
