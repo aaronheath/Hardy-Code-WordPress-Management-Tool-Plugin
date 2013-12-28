@@ -57,7 +57,13 @@ register_deactivation_hook(__FILE__,    array("Plugin", "disable"));
 add_action('admin_menu', array("Page", "menu"));
 
 /**
- * XMLRPC Hook
+ * XML-RPC Hook
  */
 
 add_filter("xmlrpc_methods", array("WPMT_xmlrpc", "wpmt_methods"));
+
+/**
+ * Scheduled Events
+ */
+
+add_action("once_off_push_update_hook", array("API", "push_update"));

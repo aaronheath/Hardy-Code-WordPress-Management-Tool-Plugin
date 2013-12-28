@@ -44,8 +44,9 @@ class Plugin {
         WPMT_xmlrpc::supported(true);
         API::pluginURL();
         API::start();
-        API::push_update();
         API::remote_status();
+        wp_schedule_single_event(time()+1, 'once_off_push_update_hook', array('x'));
+        
         
     }
     
