@@ -50,6 +50,9 @@ All this information is transmitted to the Hardy Code servers using a secure SSL
 
 * v0.0.4
  * Initial Release
+* v0.0.5
+ * Now using xml-rpc for API
+ * Removed includes of core WordPress files.
 
 ## Feedback or Issues
 

@@ -3,7 +3,7 @@
  * Plugin Name: WordPress Management Tool
  * Plugin URI: https://hardycode.com.au/wordpress
  * Description: A plugin for WorkPress that hooks in to Hardy Code's WordPress Management Tool service. The service WordPress Management Tool service enables administrators the ability to monitor all their WordPress installs from one convient place. For more information checkout hardycode.com.au/wordpress.
- * Version: 0.0.4
+ * Version: 0.0.5
  * Author: Aaron Heath (Hardy Code)
  * Author URI: https://aaronheath.com/
  * License: GNU General Public License, version 2
@@ -14,7 +14,7 @@
  * Constants
  */
 
-define('PLUGIN_VERSION',        '0.0.4');
+define('PLUGIN_VERSION',        '0.0.5');
 define('API_URL',               "https://hardycode.com.au/tools/wpmt/api");
 define('OPTION_KEY',            "HC_WPMT_KEY");
 define('OPTION_STATUS',         "HC_WPMT_STATUS");
